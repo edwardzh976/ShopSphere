@@ -1,0 +1,15 @@
+{% extends "auctions/layout.html" %}
+{% block body %}
+{% for item in watchlist %}
+
+<div class="watchlist_item">
+    <img src=files/{{item.picture}} style="width:150px">
+    <div>
+        <h2><a href='{{item.id}}'> {{item.title}} </a> </h2>
+        <h4>Price: ${{item.bid.bid}}</h4>
+        <h5>{{item.description}}</h5>
+    </div>
+</div>
+
+{% endfor %}
+{% endblock %}

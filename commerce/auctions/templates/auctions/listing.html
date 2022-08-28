@@ -1,0 +1,43 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+<div class="main_page_item">
+    <div class="page_item">
+        <img src=files/{{Listing.picture}} style="width:200px">
+        
+        
+    </div>
+
+    <div>
+        <h2> {{Listing.title}}</h2>
+        <h4>Current Bid: ${{Listing.bid.bid}}</h4>
+        {% if user.is_authenticated %}
+        <form method="GET">
+            {% if Listing in user.watchlist.all %}
+            <input name="watch" type="submit" value="Remove from Watchlist">
+            {% else %}
+            <input name="watch" type="submit" value="Add to Watchlist">
+            {% endif %}
+        </form>
+        <form method="POST">
+            {% csrf_token %}
+            {% if Listing not in user.created_listing.all %}
+            <input type="number" name="Bid" placeholder="Input Bid">
+            {% else %}
+            <input name="close_listing" type="submit" value="Close Listing">
+            {% endif %}
+        </form>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="comment" placeholder="Add Comment">
+        </form>
+        {% endif %}
+    </div>
+</div>
+<h2>Comments</h2>
+{% for comment in Listing.comments.all %}
+<p>{{comment.comment}}</p>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,33 @@
+body {
+    padding: 15px;
+}
+.list_item{
+    display:flex;
+    gap: 10%;
+    align-items: center;
+    width: 25%;
+    border: 1px solid #D2D2CF;
+    margin-bottom: 10px;
+}
+.list_items_group{
+    display: flex;
+    gap: 10%;
+    flex-wrap: wrap;
+}
+.main_page_item{
+    display: flex;
+    gap: 10%;
+    align-items: center;
+    margin-bottom: 10px;
+    
+}
+.watchlist_item{
+    display:flex;
+    gap: 10%;
+    align-items: center;
+    border: solid 1px #D2D2CF;
+    margin-bottom: 10px;
+}
+p{
+    margin: 0;
+}
