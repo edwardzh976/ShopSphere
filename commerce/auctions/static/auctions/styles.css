@@ -11,7 +11,6 @@ body {
 }
 .list_items_group{
     display: flex;
-    gap: 10%;
     flex-wrap: wrap;
 }
 .main_page_item{
