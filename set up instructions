@@ -1,0 +1,5 @@
+download python
+python3 -m pip install Django
+python3 -m pip install Pillow
+cd into appropriate directory 
+python3 manage.py runserver
