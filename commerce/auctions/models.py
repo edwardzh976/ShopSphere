@@ -19,6 +19,7 @@ class Listings(models.Model):
     picture = models.ImageField(upload_to='files', null=True, blank=True)
     bid = models.ForeignKey(Bids, on_delete=models.CASCADE)
     comments = models.ManyToManyField(Comments, blank=True)
+    
 class User(AbstractUser):
     watchlist = models.ManyToManyField(Listings, blank=True)
     bids = models.ManyToManyField(Bids, blank=True)
